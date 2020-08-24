@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Life",
+            "request": "launch",
+            "mainClass": "Life",
+            "projectName": "PraktikumsAufgaben_c6fef036"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"

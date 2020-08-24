@@ -6,27 +6,62 @@
  * statische Variablen.
  * 
  */
+import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.JFrame;
 
-public class Life {
+public class Life extends JFrame{
 
-    static int WINDOW_WIDTH = 400;
-    static int WINDOW_HEIGHT = 400;
-    static int BLOCK_SIZE = 5;
-    static int GRID_WIDTH = 300;
-    static int GRID_HEIGHT = 300;
-    static int NUMBER_OF_FOXES;
-    static int NUMBER_OF_RABBITS;
-    static int NUMBER_OF_GRASS;
-    static int STEP_TIME;
+    public static int WINDOW_WIDTH = 200;
+    public static int WINDOW_HEIGHT = 200;
+    public static int BLOCK_SIZE = 5;
+    public static int GRID_WIDTH = WINDOW_WIDTH / BLOCK_SIZE;
+    public static int GRID_HEIGHT = WINDOW_HEIGHT / BLOCK_SIZE;
+    public static int NUMBER_OF_FOXES = 50;
+    public static int NUMBER_OF_RABBITS = 100;
+    public static int NUMBER_OF_GRASS = 200;
+    public static int STEP_TIME = 500;
+
+    public static Life leben;
+
+    public CreatureHandler handler;
 
     public static void main(String[] args) {
+        leben = new Life();
 
-        JFrame window = new JFrame("Life");
-        window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-        window.setVisible(true);
-        window.setLocation(700, 400);
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        while (true) {
+            leben.handler.stepForAll();
+            leben.handler.isEatable();
+            SimplifiedDelay.delay(STEP_TIME);
+            leben.repaint();
+        }
+    }
+
+    public Life(){
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        setVisible(true);
+        getContentPane().setBackground(Color.BLACK);
+        setTitle("Life");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        handler = new CreatureHandler();
+
+        for (int i = 0; i < NUMBER_OF_FOXES; i++) {
+            handler.add(new Fox());
+        }
+
+        for (int i = 0; i < NUMBER_OF_RABBITS; i++) {
+            handler.add(new Bunny());
+        }
+
+        for (int i = 0; i < NUMBER_OF_GRASS; i++) {
+            handler.add(new Grass());
+        }
+    }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+        handler.drawForAll(g);
     }
     
 }
