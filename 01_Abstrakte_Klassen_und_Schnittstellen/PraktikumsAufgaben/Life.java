@@ -12,13 +12,13 @@ import javax.swing.JFrame;
 
 public class Life extends JFrame{
 
-    public static int WINDOW_WIDTH = 200;
-    public static int WINDOW_HEIGHT = 200;
+    public static int WINDOW_WIDTH = 400;
+    public static int WINDOW_HEIGHT = 400;
     public static int BLOCK_SIZE = 5;
     public static int GRID_WIDTH = WINDOW_WIDTH / BLOCK_SIZE;
     public static int GRID_HEIGHT = WINDOW_HEIGHT / BLOCK_SIZE;
-    public static int NUMBER_OF_FOXES = 50;
-    public static int NUMBER_OF_RABBITS = 100;
+    public static int NUMBER_OF_FOXES = 100;
+    public static int NUMBER_OF_RABBITS = 200;
     public static int NUMBER_OF_GRASS = 200;
     public static int STEP_TIME = 500;
 
@@ -40,7 +40,7 @@ public class Life extends JFrame{
     public Life(){
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setVisible(true);
-        getContentPane().setBackground(Color.BLACK);
+        getContentPane().setBackground(Color.DARK_GRAY);
         setTitle("Life");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
