@@ -10,17 +10,25 @@ public class FileSchreiber {
 
         int output_text = 2;
         String output_path = "output.txt";
+        FileWriter writer = null;
 
         try {
-            FileWriter writer = new FileWriter(output_path);
+            writer = new FileWriter(output_path);
             for (; output_text <= 1000; output_text += 2){
                 writer.write(output_text + "\n");
             }
-            writer.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
+            e.printStackTrace();
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
-
         FileLeser.lesen();
     }
 }

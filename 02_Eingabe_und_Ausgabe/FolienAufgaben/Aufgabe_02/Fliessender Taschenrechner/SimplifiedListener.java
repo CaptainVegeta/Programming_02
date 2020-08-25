@@ -18,6 +18,8 @@ public class SimplifiedListener implements KeyListener, ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        /**
         try {
             
         } catch (NumberFormatException f) {
@@ -27,5 +29,6 @@ public class SimplifiedListener implements KeyListener, ActionListener
             String fehlerMeldungNullPointer = g.getMessage();
             Taschenrechner.surface.log.append(fehlerMeldungNullPointer + "\n"); // Neue Zeile: \n
         }
+        */
     }
 }

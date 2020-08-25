@@ -1,0 +1,17 @@
+kurt:2
+Hans:1
+Kurt:1
+peter:1
+fritz:1
+hans:1
+hans:1
+Peter:0
+Fritz:0
+Peter:0
+peter:0
+peter:0
+peter:0
+peter:0
+peter:0
+hans:0
+hans:0

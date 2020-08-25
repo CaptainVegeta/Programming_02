@@ -11,8 +11,7 @@ public class Main {
         mein_objekt3.text = "Hallo";
         mein_objekt2.text = "Welt";
         System.out.println(mein_objekt3.text);
-        System.out.println(mein_objekt1.text);
-       
+        System.out.println(mein_objekt1.text); 
     }
 
 }
