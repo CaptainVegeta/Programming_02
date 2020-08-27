@@ -24,7 +24,7 @@ public class FileSchreiber {
             if (writer != null) {
                 try {
                     writer.close();
-                } catch (Exception e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
