@@ -2,12 +2,13 @@
 
 public class Main {
     static NodeList nodeList = new NodeList();
-    static int[] array = new int[100000];
+    static int[] array = new int[50000];
 
     public static void main(String[] args) {
         fill();
-        timeArray();
         timeNodelist();
+        timeArray();
+
     }
 
     public static void fill(){
@@ -22,7 +23,7 @@ public class Main {
         System.out.println("ArrayZeit1: "+arrayZeit1);
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
-            sum += i;
+            sum += array[i];
         }
         long arrayZeit2 = System.currentTimeMillis();
         System.out.println("ArrayZeit2: "+arrayZeit2);
@@ -34,8 +35,8 @@ public class Main {
     public static void timeNodelist(){
         long nodeZeit1 = System.currentTimeMillis();
         int sum = 0;
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            sum += i;
+        for (int i = 0; i < array.length; i++) {
+            sum += (int)nodeList.get(i);
         }
         long nodeZeit2 = System.currentTimeMillis();
         long nodeZeit = nodeZeit2 - nodeZeit1;
