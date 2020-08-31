@@ -27,7 +27,7 @@ public class NodeList {
     }
 
     public void resetIteration(){
-        iterate = root;
+        iterate_node = root;
     }
 
     public void remove(int index){
