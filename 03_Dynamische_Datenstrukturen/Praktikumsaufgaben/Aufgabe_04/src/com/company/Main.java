@@ -7,8 +7,7 @@ public class Main {
 
         Telefonliste telefonliste = new Telefonliste();
         telefonliste.read();
-        telefonliste.printHatAngerufen();
-        telefonliste.printWurdeAngerufen();
+        telefonliste.print();
     }
 }
 

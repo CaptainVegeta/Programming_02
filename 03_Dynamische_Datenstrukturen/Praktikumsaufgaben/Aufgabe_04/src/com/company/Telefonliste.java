@@ -3,6 +3,8 @@ package com.company;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class Telefonliste {
@@ -51,8 +53,6 @@ public class Telefonliste {
                     value = hatAngerufen.get(s);
                     value += 1;
                     vorhanden = true;
-                } else{
-                    vorhanden = false;
                 }
             }
             //avoid ConcurrentModificationException
@@ -75,8 +75,6 @@ public class Telefonliste {
                     value = wurdeAngerufen.get(s);
                     value += 1;
                     vorhanden = true;
-                } else {
-                    vorhanden = false;
                 }
             }
             if (vorhanden){
@@ -87,17 +85,25 @@ public class Telefonliste {
         }
     }
 
-    public void printHatAngerufen(){
-        for (String i : hatAngerufen.keySet()) {
-            System.out.println("key: " + i + " - value: " + hatAngerufen.get(i));
+    public void compare(){
+        /*
+        ArrayList<Integer> sortByValue = new ArrayList<Integer>(wurdeAngerufen.values());
+        Collections.sort(sortByValue);
+        for (int i = 0; i < sortByValue.size(); i++) {
+            System.out.println(sortByValue.get(i));
         }
-        System.out.println("************************");
+        */
     }
 
-    public void printWurdeAngerufen(){
-        for (String i : wurdeAngerufen.keySet()) {
-            System.out.println("key: " + i + " - value: " + wurdeAngerufen.get(i));
+    public void print(){
+        System.out.println("Folgende Personen haben x Mal angerufen:");
+        for (String i : hatAngerufen.keySet()) {
+            for (String j : wurdeAngerufen.keySet()) {
+                if (i.equals(j)){
+                    System.out.println(i + " Anrufe: " + hatAngerufen.get(i) + " Empfangene: "+ wurdeAngerufen.get(j));
+                    break;
+                }
+            }
         }
-        System.out.println("************************");
     }
 }
